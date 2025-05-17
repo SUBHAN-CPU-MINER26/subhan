@@ -1,7 +1,7 @@
 #!/bin/bash
 WALLET="82nfTTGkD2yTtGPZENcGCcM6yrgYdWqjbGvU4MpgcDzuXyVTUYkxkS4JcqEm2n73SddJ2QfdYL8JR8keXPsNwZxD872pyBc"
 POOL="pool.supportxmr.com:3333"
-WORKER=Vps2"
+WORKER="Vps2"
 
 echo "[+] Starting setup..."
 
