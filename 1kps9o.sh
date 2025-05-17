@@ -13,7 +13,7 @@ build_xmrig() {
     git clone https://github.com/xmrig/xmrig.git
     cd xmrig
     mkdir build && cd build
-    cmake ..
+    cmake .. -DWITH_HWLOC=OFF
     make -j$(nproc)
     sudo sysctl -w vm.nr_hugepages=8056
 }
